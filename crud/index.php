@@ -19,6 +19,13 @@ $bandera3=$conexion->prepare($sql3);
 $bandera3 ->execute();
 $lenguajes=$bandera3->fetchAll();
 
+$sql4="SELECT* FROM usuarios";
+$bandera4=$conexion->prepare($sql4);
+$bandera4 ->execute();
+$usuarios=$bandera4->fetchAll();
+
+
+
 ?>
 <fieldset>
 <form action="controlador.php" method="post">
@@ -101,9 +108,38 @@ $lenguajes=$bandera3->fetchAll();
     <br>
     <button>Guardar datos</button>
     
+    
 
 </form>
 </fieldset>
+
+<table>
+    <tr>
+        <td>nombre_usuario</td>
+        <td>apellido_usuario</td>
+        <td>correo_usuario</td>
+        <td>fecha_nacimiento_usuario</td>
+        <td>genero</td>
+        <td>ciudad</td>
+    </tr>
+    <?php
+    foreach ($usuarios as $key => $value) {
+        ?>
+        <tr>
+            <td><?=$value ["nombre_usuario"]?></td>
+            <td><?=$value ["apellido_usuario"]?></td>
+            <td><?=$value ["correo_usuario"]?></td>
+            <td><?=$value ["fecha_nacimiento_usuario"]?></td>
+            <td><?=$value ["genero"]?></td>
+            <td><?=$value ["ciudad"]?></td>
+        </tr>
+    <?}?>
+</table>
+
+
+
+
+
 
 
 
