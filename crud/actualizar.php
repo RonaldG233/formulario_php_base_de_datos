@@ -9,7 +9,7 @@ $bandera=$conexion->prepare($sql);
 $bandera ->execute();
 $ciudades=$bandera->fetchAll();
 
-$sql2="SELECT* FROM generos";
+$sql2="SELECT * FROM generos";
 $bandera2=$conexion->prepare($sql2);
 $bandera2 ->execute();
 $generos=$bandera2->fetchAll();
@@ -19,7 +19,20 @@ $bandera3=$conexion->prepare($sql3);
 $bandera3 ->execute();
 $lenguajes=$bandera3->fetchAll();
 
+$id=$_REQUEST['id'];
+
+$sql10="SELECT * FROM usuarios WHERE id=$id";
+$bandera10=$conexion->prepare($sql10);
+$bandera10 ->execute();
+$actuali=$bandera10->fetch();
+
+$sql4="SELECT* FROM usuarios";
+$bandera4=$conexion->prepare($sql4);
+$bandera4 ->execute();
+$usuarios=$bandera4->fetchAll();
+
 ?>
+
 <fieldset>
 <form action="controlador.php" method="post">
 
@@ -28,7 +41,7 @@ $lenguajes=$bandera3->fetchAll();
     </div>
     <div>
         <label for="nombre">nombre: </label>
-        <input type="text" name="nombre" required>
+        <input type="text" name="nombre" required     value="<?=$usuarios['nombre']?>">
     </div>  
     <br>
     <div>
@@ -72,7 +85,7 @@ $lenguajes=$bandera3->fetchAll();
                 <label for="<?=$value['id'] ?>"  ><?=$value['genero']?></label>
                 <input type="radio" name="genero_id" id="<?=$value['id'] ?>"  value="<?=$value['id']?>" required    >
                 
-
+                
             <?php
             }
             ?>
@@ -89,8 +102,9 @@ $lenguajes=$bandera3->fetchAll();
             foreach($lenguajes as $key=> $value){
                 ?>
                 <label for="<?=$value['id'] ?>"  ><?=$value['nombre_lenguaje']?></label>
-                <input type="checkbox" name="nombre_lenguaje_id[]" id="<?=$value['id'] ?>"  value="<?=$value['id']?> ">
-                 
+                <input type="checkbox" name="nombre_lenguaje_id[]" id="<?=$value['id'] ?>"  value="<?=$value['id']?> "     >
+                
+                
             <?php
             }
             ?>
@@ -98,11 +112,9 @@ $lenguajes=$bandera3->fetchAll();
     </div>
 
     <br>
-    <button>GUARDAR DATOS</button>
+    <button>ACTUALIZAR DATOS</button>
     
     
 
 </form>
 </fieldset>
-<a href="tabla.php">TABLA</a>
-
