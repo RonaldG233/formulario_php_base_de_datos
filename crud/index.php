@@ -27,35 +27,35 @@ $usuarios=$bandera6->fetchAll();
 
 
 <link rel="stylesheet" href="estilos.css">
-<fieldset>
-<form action="controlador.php" method="post">
+<fieldset class="tabla">
+<form action="controlador.php" method="post" class="formulario">
 
-    <div>
+    <div class="titulo">
         <h3>REGISTRO DE USUARIOS</h3>
     </div>
-    <div>
-        <label for="nombre">nombre: </label>
-        <input type="text" autocomplete="off" name="nombre" required pattern="[a-zA-Z]+">
+    <div class="registro__nombre">
+        <label class="registro__nombre__titulo"  for="nombre">NOMBRE </label>
+        <input type="text" class="registro__nombre__input" autocomplete="off" name="nombre" required pattern="[a-zA-Z]+" placeholder="Ingresar nombre">
     </div>  
     <br>
-    <div>
-        <label for="apellido">apellido: </label>
-        <input type="text" autocomplete="off" name="apellido" required pattern="[a-zA-Z]+">
+    <div class="registro__apellido">
+        <label class="registro__apellido__titulo" for="apellido">APELLIDO </label>
+        <input type="text" class="registro__apellido__input" autocomplete="off" name="apellido" required pattern="[a-zA-Z]+" placeholder="Ingresar apellido">
     </div>
     <br>
-    <div>
-        <label for="correo">correo: </label>
-        <input type="text" autocomplete="off" name="correo" required pattern="[a-zA-Z1-9]+@[A-Za-z]+[.][a-z]">
+    <div class="registro__correo">
+        <label for="correo" class="registro__correo__titulo">CORREO </label>
+        <input type="email" class="registro__correo__input" autocomplete="off" name="correo" required placeholder="Ingresar correo">
     </div>
     <br>
-    <div>
-        <label for="fecha_nac">fecha de nacimiento: </label>
-        <input type="date" name="fecha_nac" required>
+    <div class="registro__nacimiento">
+        <label class="registro__nacimiento__titulo" for="fecha_nac">FECHA DE NACIMIENTO: </label>
+        <input class="registro__nacimiento__input" type="date" name="fecha_nac" required>
     </div>  
     <br>
 
-    <div>
-        <label for="ciudad_id">ciudades</label>
+    <div class="registro__ciudad">
+        <label for="ciudad_id">CIUDADES</label>
         <select name="ciudad_id" id="ciudad_id" required>
             <?php
             foreach ($ciudades as $key => $value){
@@ -69,7 +69,7 @@ $usuarios=$bandera6->fetchAll();
         </select>
     </div>
             <br>
-    <div>
+    <div class="registro__genero">
         <label for="genero_id">genero: </label>
             <div>
             <?php
@@ -88,7 +88,7 @@ $usuarios=$bandera6->fetchAll();
 
     <br>
 
-    <div>
+    <div class="registro__lenguajes">
         <label for="lenguaje_id">Lenguajes: </label>
             <div>
             <?php
@@ -105,11 +105,11 @@ $usuarios=$bandera6->fetchAll();
     </div>
 
     <br>
-    <button>GUARDAR DATOS</button>
+    <button class="boton__guardar">GUARDAR DATOS</button>
     
     
 
 </form>
 </fieldset>
-<a href="tabla.php">VER TABLA DE REGISTROS</a>
+<a href="tabla.php" class="tabla__registros">VER TABLA DE REGISTROS</a>
 

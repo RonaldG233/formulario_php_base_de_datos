@@ -1,0 +1,111 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    
+}
+
+.tabla{
+    background-color: azure;
+    color: black;
+    width: 800px;
+    height: 750px;
+    border: 8px solid rgb(red);
+    margin: 0 auto;
+    margin-top: 20px;
+}
+.formulario{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    
+}
+
+.titulo{
+    font-size: 25px;
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+
+.registro__nombre{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.registro__nombre__titulo{
+    display: flex;
+    justify-content: center;
+    font-size: 19px;
+}
+.registro__nombre__input{
+    height: 30px;
+    margin-top: 5px;
+    font-size: 15px;
+}
+
+.registro__apellido{
+    display: flex;
+    flex-direction: column;
+}
+.registro__apellido__titulo{
+    display: flex;
+    justify-content: center;
+    font-size: 19px;
+}
+.registro__apellido__input{
+    height: 30px;
+    margin-top: 5px;
+    font-size: 15px;
+}
+
+.registro__correo{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+.registro__correo__titulo{
+    display: flex;
+    justify-content: center;
+    font-size: 19px;
+}
+.registro__correo__input{
+    height: 30px;
+    margin-top: 5px;
+    font-size: 15px;
+}
+
+.registro__nacimiento__titulo{
+    font-size: 19px;
+}
+.registro__nacimiento__input{
+    font-size: 15px;
+}
+
+.registro__ciudad{
+    font-size: 19px;
+}
+.registro__genero{
+    font-size: 19px;
+}
+
+.registro__lenguajes{
+    font-size: 19px;
+}
+
+
+.boton__guardar{
+    padding: 15px 20px;
+    background-color: black;
+    color: white;
+    border-radius: 10px;    
+}
+
+.tabla__registros{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
