@@ -19,7 +19,14 @@ $bandera3=$conexion->prepare($sql3);
 $bandera3 ->execute();
 $lenguajes=$bandera3->fetchAll();
 
+$sql6="SELECT* FROM usuarios";
+$bandera6=$conexion->prepare($sql6);
+$bandera6 ->execute();
+$usuarios=$bandera6->fetchAll();
 ?>
+
+
+<link rel="stylesheet" href="estilos.css">
 <fieldset>
 <form action="controlador.php" method="post">
 
@@ -28,17 +35,17 @@ $lenguajes=$bandera3->fetchAll();
     </div>
     <div>
         <label for="nombre">nombre: </label>
-        <input type="text" name="nombre" required>
+        <input type="text" autocomplete="off" name="nombre" required pattern="[a-zA-Z]+">
     </div>  
     <br>
     <div>
         <label for="apellido">apellido: </label>
-        <input type="text" name="apellido" required>
+        <input type="text" autocomplete="off" name="apellido" required pattern="[a-zA-Z]+">
     </div>
     <br>
     <div>
         <label for="correo">correo: </label>
-        <input type="email" name="correo" required>
+        <input type="text" autocomplete="off" name="correo" required pattern="[a-zA-Z1-9]+@[A-Za-z]+[.][a-z]">
     </div>
     <br>
     <div>
@@ -104,5 +111,5 @@ $lenguajes=$bandera3->fetchAll();
 
 </form>
 </fieldset>
-<a href="tabla.php">TABLA</a>
+<a href="tabla.php">VER TABLA DE REGISTROS</a>
 
